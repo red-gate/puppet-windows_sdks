@@ -1,0 +1,7 @@
+* text eol=lf
+
+*.ps1 text eol=crlf
+*.ps1.erb text eol=crlf
+*.ini text eol=crlf
+*.settings text eol=crlf
+*.reg text eol=crlf

@@ -1,0 +1,23 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[{*.pp,*.rb,*.yml}]
+# https://docs.puppet.com/guides/style_guide.html#spacing-indentation-and-whitespace
+indent_style = space
+indent_size = 2
+
+[{*.ps1,*.ps1.erb}]
+end_of_line = crlf
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+# various windows-only files.
+[{*.ini,*.settings,*.reg,*.dependencies}]
+end_of_line = crlf

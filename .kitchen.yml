@@ -1,0 +1,43 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: puppet_apply
+  custom_options: <%= ENV['PUPPET_COLOR'] %>
+  manifests_path: spec/manifests
+  modules_path: ../.kitchen-modules:..
+  ignored_paths_from_root:
+    - .kitchen
+  hiera_data_path: ../.hieradata
+  hiera_config_path: ../hiera.yaml
+  require_chef_for_busser: false
+  resolve_with_librarian_puppet: false
+  require_puppet_collections: true
+  puppet_debug: <%= ENV['PUPPET_DEBUG'] %>
+  puppet_detailed_exitcodes: true
+  max_retries: 1
+  wait_for_retry: 10
+  retry_on_exit_code:
+    - 2 # The run succeeded, and some resources were changed.
+    - 6 # The run succeeded, and included both changes and failures.
+
+transport:
+  name: winrm
+  elevated: true
+
+platforms:
+  - name: windows-2012r2
+    driver_plugin: vagrant
+    driver_config:
+      box: red-gate/windows-2012r2
+
+verifier:
+  name: shell
+
+suites:
+  - name: dotnet462
+    provisioner:
+      manifest: dotnet462.pp
+    verifier:
+      command: rspec -c -f d -I spec spec/acceptance/dotnet462_spec.rb
