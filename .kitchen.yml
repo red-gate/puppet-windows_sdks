@@ -6,11 +6,9 @@ provisioner:
   name: puppet_apply
   custom_options: <%= ENV['PUPPET_COLOR'] %>
   manifests_path: spec/manifests
-  modules_path: ../.kitchen-modules:..
+  modules_path: .kitchen-modules
   ignored_paths_from_root:
     - .kitchen
-  hiera_data_path: ../.hieradata
-  hiera_config_path: ../hiera.yaml
   require_chef_for_busser: false
   resolve_with_librarian_puppet: false
   require_puppet_collections: true
