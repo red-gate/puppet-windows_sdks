@@ -8,6 +8,7 @@ class windows_sdks::win7(
   $url = 'https://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso',
   $tempFolder = 'c:/temp') {
 
+  require chocolatey
   require archive
 
   ensure_resource('file', [$tempFolder, "${tempFolder}/WinSDK.7.1"], {'ensure' => 'directory'})
