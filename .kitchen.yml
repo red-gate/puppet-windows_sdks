@@ -39,3 +39,8 @@ suites:
       manifest: dotnet462.pp
     verifier:
       command: rspec -c -f d -I spec spec/acceptance/dotnet462_spec.rb
+  - name: dotnet47
+    provisioner:
+      manifest: dotnet47.pp
+    verifier:
+      command: rspec -c -f d -I spec spec/acceptance/dotnet47_spec.rb
