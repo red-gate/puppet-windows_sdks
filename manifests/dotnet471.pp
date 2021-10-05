@@ -1,6 +1,6 @@
 # Install the .NET Framework 4.7 DevPack
 class windows_sdks::dotnet471(
-  $source = 'https://download.microsoft.com/download/9/0/1/901B684B-659E-4CBD-BEC8-B3F06967C2E7/NDP471-DevPack-ENU.exe',
+  $source = 'https://download.visualstudio.microsoft.com/download/pr/e5eb8d37-5bbd-4fb7-a71d-b749e010ef9f/601437d729667ecd29020a829fbc4881/ndp471-devpack-enu.exe',
   $temp_folder = 'C:/Windows/Temp'
   ) {
 
