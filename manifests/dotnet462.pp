@@ -1,6 +1,6 @@
 # Install the .NET Framework 4.6.2 SDK
 class windows_sdks::dotnet462(
-  $source = 'https://download.microsoft.com/download/E/F/D/EFD52638-B804-4865-BB57-47F4B9C80269/NDP462-DevPack-KB3151934-ENU.exe',
+  $source = 'https://download.visualstudio.microsoft.com/download/pr/ea744c52-1db4-4173-943d-a5d18e7e0d97/105c0e17be525bb0cebc7795d7aa1c32/ndp462-devpack-kb3151934-enu.exe',
   $temp_folder = 'C:/Windows/Temp'
   ) {
 
